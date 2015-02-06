@@ -16,7 +16,7 @@ class Account
     
     def withdraw(pin_number, amount)
         if pin_number == pin
-            @balance - amount
+            @balance -= amount
             puts "Withdrew #{amount}. New balance: $#{@balance}."
         else
             puts pin_error
@@ -27,7 +27,7 @@ class Account
     
     private
     def pin
-        @pin = 1234
+        @pin ||= 1234
     end
     
     def pin_error
